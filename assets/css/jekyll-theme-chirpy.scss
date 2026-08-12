@@ -1,0 +1,70 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* 한글+영문 혼용 시 단어 중간에서 줄바꿈되는 것 방지 */
+body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* Navy accent color */
+:root[data-bs-theme='light'] {
+  --link-color: #1d3557;
+  --toc-highlight: #1d3557;
+  --btn-share-hover-color: #1d3557;
+  --checkbox-checked-color: #1d3557;
+  --bs-primary: #1d3557;
+  --bs-primary-rgb: 29, 53, 87;
+  --bs-link-color: #1d3557;
+  --bs-link-color-rgb: 29, 53, 87;
+}
+
+:root[data-bs-theme='dark'] {
+  --link-color: #7c9cc4;
+  --toc-highlight: #7c9cc4;
+  --btn-share-hover-color: #7c9cc4;
+  --checkbox-checked-color: #7c9cc4;
+  --bs-primary: #7c9cc4;
+  --bs-primary-rgb: 124, 156, 196;
+  --bs-link-color: #7c9cc4;
+  --bs-link-color-rgb: 124, 156, 196;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-bs-theme]) {
+    --link-color: #1d3557;
+    --toc-highlight: #1d3557;
+    --btn-share-hover-color: #1d3557;
+    --checkbox-checked-color: #1d3557;
+    --bs-primary: #1d3557;
+    --bs-primary-rgb: 29, 53, 87;
+    --bs-link-color: #1d3557;
+    --bs-link-color-rgb: 29, 53, 87;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-bs-theme]) {
+    --link-color: #7c9cc4;
+    --toc-highlight: #7c9cc4;
+    --btn-share-hover-color: #7c9cc4;
+    --checkbox-checked-color: #7c9cc4;
+    --bs-primary: #7c9cc4;
+    --bs-primary-rgb: 124, 156, 196;
+    --bs-link-color: #7c9cc4;
+    --bs-link-color-rgb: 124, 156, 196;
+  }
+}
