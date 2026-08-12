@@ -15,7 +15,7 @@ tags:
   - NoSQL
   - Elasticsearch
   - 백엔드
-image: /assets/img/posts/mermaid1.png
+image: /assets/img/posts/gemini_generated_image_4obgr24obgr24obg.png
 ---
 # CAP 정리부터 Kafka, CQRS, Redis까지: 분산 시스템 아키텍처 정리
 
