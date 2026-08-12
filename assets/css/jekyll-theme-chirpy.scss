@@ -14,6 +14,18 @@
 
 /* append your custom style below */
 
+/* oliveyoung.tech 스타일: Spoqa Han Sans(한글) + Poppins(영문/숫자) */
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+body {
+  font-family: 'Spoqa Han Sans', 'Poppins', -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .card-title, .site-title, #topbar-title, .page-title {
+  font-family: 'Poppins', 'Spoqa Han Sans', sans-serif;
+}
+
 /* 한글+영문 혼용 시 단어 중간에서 줄바꿈되는 것 방지 */
 body {
   word-break: keep-all;
@@ -137,4 +149,45 @@ body {
 
 #search {
   margin-left: 1.5rem;
+}
+
+/* ---- oliveyoung.tech 포인트 컬러(올리브그린) — 코드/카테고리에만, 나머지는 네이비 유지 ---- */
+:root {
+  --code-color: #a4d233;
+}
+
+.categories {
+  color: #a4d233;
+}
+
+/* ---- 태그에 "#" 프리픽스 (oliveyoung 패턴 차용, 색은 기존 네이비 유지) ---- */
+.post-tag::before {
+  content: "#";
+}
+
+/* ---- 본문 링크 호버 언더라인 (oliveyoung 패턴: 그라디언트로 만든 얇은 밑줄이 호버 시 나타남) ---- */
+.content a:not(.img-link) {
+  border-bottom: none;
+  background-image: linear-gradient(var(--link-color), var(--link-color));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 0.2s ease-in-out;
+}
+
+.content a:not(.img-link):hover {
+  background-size: 100% 1px;
+}
+
+/* ---- 글 목록 썸네일 카드 (oliveyoung 스타일: 고정 비율 + 옅은 배경) ---- */
+.post-preview .col-md-5 {
+  background-color: var(--main-bg);
+}
+
+.post-preview .col-md-5 img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background-color: rgb(0 0 0 / 4%);
+  border-radius: 10px;
 }

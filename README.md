@@ -8,7 +8,8 @@ https://1irving1.github.io — Jekyll + [Chirpy](https://github.com/cotes2020/je
 
 - 이 페이지는 관리자 전용 글쓰기 도구이며, 방문자가 보는 실제 블로그(루트 주소)와는 별개 화면임
 - 여기서 글을 저장하면 `_posts`에 자동 커밋되고, 몇 분 안에 실제 블로그에 반영됨
-- 항목: Title(제목), Publish Date(발행일), Categories(분류, 여러 개 가능), Tags(태그), Body(본문, 마크다운)
+- 항목: Title(제목), Publish Date(발행일), Categories(분류, 여러 개 가능), Tags(태그), Thumbnail(썸네일, 선택), Body(본문, 마크다운)
+- Thumbnail을 넣으면 홈 화면 글 목록 카드에 큰 썸네일 이미지로 나타남 (Chirpy 기본 기능, `image:` 프론트매터). 안 넣으면 지금처럼 텍스트만 나오는 카드로 자연스럽게 나옴
 
 ### 안 될 때
 
