@@ -110,3 +110,31 @@ body {
   --bs-btn-disabled-color: #7c9cc4;
   --bs-btn-disabled-border-color: #7c9cc4;
 }
+
+/* Navy sidebar (same in light/dark — it's a fixed brand panel, not content) */
+#sidebar {
+  --site-title-color: #ffffff;
+  --site-subtitle-color: rgb(255 255 255 / 70%);
+  --sidebar-bg: #1d3557;
+  --sidebar-border-color: rgb(255 255 255 / 10%);
+  --sidebar-muted-color: rgb(255 255 255 / 75%);
+  --sidebar-active-color: #ffffff;
+  --sidebar-hover-bg: rgb(255 255 255 / 10%);
+  --sidebar-btn-bg: rgb(255 255 255 / 10%);
+  --sidebar-btn-color: rgb(255 255 255 / 85%);
+  --avatar-border-color: rgb(255 255 255 / 35%);
+}
+
+/* Topbar: bigger "Home" breadcrumb, nudged down; a bit more breathing room for search */
+#topbar #breadcrumb {
+  font-size: 1.15rem;
+  padding-top: 0.3rem;
+}
+
+#topbar {
+  padding-right: 1rem;
+}
+
+#search {
+  margin-left: 1.5rem;
+}
