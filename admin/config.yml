@@ -3,7 +3,7 @@ backend:
   repo: 1Irving1/1Irving1.github.io
   branch: main
   auth_type: pkce
-  app_id: REPLACE_WITH_OAUTH_APP_CLIENT_ID
+  app_id: Ov23liKp6eB20v1ObO7x
 
 media_folder: "assets/img/posts"
 public_folder: "/assets/img/posts"
