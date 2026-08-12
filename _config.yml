@@ -1,0 +1,5 @@
+title: "1Irving1의 기술 블로그"
+description: "개발하며 배운 것들을 기록하는 공간"
+theme: minima
+plugins:
+  - jekyll-feed
