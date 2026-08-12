@@ -68,3 +68,45 @@ body {
     --bs-link-color-rgb: 124, 156, 196;
   }
 }
+
+/* Bootstrap bakes .btn-outline-primary colors in at build time, so --bs-primary
+   alone doesn't reach it (this is what the tag pills use) — override directly. */
+.btn-outline-primary {
+  --bs-btn-color: #1d3557;
+  --bs-btn-border-color: #1d3557;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #1d3557;
+  --bs-btn-hover-border-color: #1d3557;
+  --bs-btn-focus-shadow-rgb: 29, 53, 87;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #1d3557;
+  --bs-btn-active-border-color: #1d3557;
+  --bs-btn-disabled-color: #1d3557;
+  --bs-btn-disabled-border-color: #1d3557;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-bs-theme='light']) .btn-outline-primary {
+    --bs-btn-color: #7c9cc4;
+    --bs-btn-border-color: #7c9cc4;
+    --bs-btn-hover-bg: #7c9cc4;
+    --bs-btn-hover-border-color: #7c9cc4;
+    --bs-btn-focus-shadow-rgb: 124, 156, 196;
+    --bs-btn-active-bg: #7c9cc4;
+    --bs-btn-active-border-color: #7c9cc4;
+    --bs-btn-disabled-color: #7c9cc4;
+    --bs-btn-disabled-border-color: #7c9cc4;
+  }
+}
+
+[data-bs-theme='dark'] .btn-outline-primary {
+  --bs-btn-color: #7c9cc4;
+  --bs-btn-border-color: #7c9cc4;
+  --bs-btn-hover-bg: #7c9cc4;
+  --bs-btn-hover-border-color: #7c9cc4;
+  --bs-btn-focus-shadow-rgb: 124, 156, 196;
+  --bs-btn-active-bg: #7c9cc4;
+  --bs-btn-active-border-color: #7c9cc4;
+  --bs-btn-disabled-color: #7c9cc4;
+  --bs-btn-disabled-border-color: #7c9cc4;
+}
