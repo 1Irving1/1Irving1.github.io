@@ -1,10 +1,12 @@
 ---
 title: "CAP 이론부터 Kafka, CQRS, Redis까지: 대규모 분산 아키텍처 완벽 가이드"
 date: 2026-08-12T16:06:00.000+09:00
-categories: []
+categories:
+  - Architecture
 tags:
-  - "#분산시스템 #시스템아키텍처 #SystemDesign #CAP이론 #CQRS #Kafka #Redis #RDBMS #NoSQL
+  - "#Architecture #분산시스템 #시스템아키텍처 #CAP이론 #CQRS #Kafka #Redis #RDBMS #NoSQL
     #Elasticsearch #백엔드"
+image: /assets/img/posts/mermaid1.png
 ---
 # CAP 정리부터 Kafka, CQRS, Redis까지: 분산 시스템 아키텍처 정리
 
