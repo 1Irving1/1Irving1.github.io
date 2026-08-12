@@ -3,3 +3,9 @@ description: "개발하며 배운 것들을 기록하는 공간"
 theme: minima
 plugins:
   - jekyll-feed
+
+minima:
+  skin: auto          # 시스템 설정 따라 라이트/다크 자동 전환
+  show_excerpts: true # 홈 화면 글 목록에 본문 미리보기 표시
+  social_links:
+    github: 1Irving1
