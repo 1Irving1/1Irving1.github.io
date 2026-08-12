@@ -45,20 +45,31 @@ CAP 정리에서는 Consistency(일관성), Availability(가용성), Partition T
 ![](/assets/img/posts/mermaid1.png)
 
 ```mermaid
-graph TD
-    User["Client (사용자 요청)"]
-    
-    User -->|Write (생성/수정/삭제)| WriteModel["Write Model (CP 특성)"]
-    User -->|Read (조회)| ReadModel["Read Model (AP 특성)"]
+graph LR
+    User["Client<br/>(사용자 요청)"]
 
-    subgraph Write_Storage ["Write 계층"]
-        WriteModel --> RDBMS["RDBMS (MySQL, PostgreSQL)<br/>- ACID 트랜잭션 보장<br/>- 데이터 정합성 최우선"]
+    User -->|Write (생성/수정/삭제)| WriteModel["Write Model"]
+    User -->|Read (조회)| ReadModel["Read Model"]
+
+    subgraph Write_Layer ["Write 계층 (CP 특성)"]
+        WriteModel --> RDBMS[("RDBMS (MySQL, PostgreSQL)<br/>- ACID 트랜잭션<br/>- 데이터 정합성 보장")]
     end
 
-    subgraph Read_Storage ["Read 계층"]
-        ReadModel --> ES["Elasticsearch<br/>- 역색인 기반 초고속 검색"]
-        ReadModel --> NoSQL["MongoDB / DynamoDB<br/>- 비정규화 문서 빠른 조회"]
+    subgraph Read_Layer ["Read 계층 (AP 특성)"]
+        ReadModel --> ES["Elasticsearch<br/>- 역색인 초고속 검색"]
+        ReadModel --> NoSQL[("MongoDB / DynamoDB<br/>- 비정규화 문서 빠른 조회")]
     end
+
+    RDBMS -.->|Event / CDC 동기화| ES
+    RDBMS -.->|Event / CDC 동기화| NoSQL
+
+    classDef client fill:#f4f4f4,stroke:#333,stroke-width:2px;
+    classDef write fill:#fff0f0,stroke:#ff6b6b,stroke-width:2px;
+    classDef read fill:#f0f8ff,stroke:#4dabf7,stroke-width:2px;
+
+    class User client;
+    class WriteModel,RDBMS write;
+    class ReadModel,ES,NoSQL read;
 ```
 
 * **Write 계층 (CP)**: RDBMS를 활용하여 데이터의 정합성과 ACID 트랜잭션을 보장합니다.
