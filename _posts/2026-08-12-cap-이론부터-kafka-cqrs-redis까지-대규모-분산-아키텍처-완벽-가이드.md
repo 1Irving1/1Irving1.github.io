@@ -44,33 +44,7 @@ CAP 정리에서는 Consistency(일관성), Availability(가용성), Partition T
 
 ![](/assets/img/posts/mermaid1.png)
 
-```mermaid
-graph LR
-    User["Client<br/>(사용자 요청)"]
 
-    User -->|Write (생성/수정/삭제)| WriteModel["Write Model"]
-    User -->|Read (조회)| ReadModel["Read Model"]
-
-    subgraph Write_Layer ["Write 계층 (CP 특성)"]
-        WriteModel --> RDBMS[("RDBMS (MySQL, PostgreSQL)<br/>- ACID 트랜잭션<br/>- 데이터 정합성 보장")]
-    end
-
-    subgraph Read_Layer ["Read 계층 (AP 특성)"]
-        ReadModel --> ES["Elasticsearch<br/>- 역색인 초고속 검색"]
-        ReadModel --> NoSQL[("MongoDB / DynamoDB<br/>- 비정규화 문서 빠른 조회")]
-    end
-
-    RDBMS -.->|Event / CDC 동기화| ES
-    RDBMS -.->|Event / CDC 동기화| NoSQL
-
-    classDef client fill:#f4f4f4,stroke:#333,stroke-width:2px;
-    classDef write fill:#fff0f0,stroke:#ff6b6b,stroke-width:2px;
-    classDef read fill:#f0f8ff,stroke:#4dabf7,stroke-width:2px;
-
-    class User client;
-    class WriteModel,RDBMS write;
-    class ReadModel,ES,NoSQL read;
-```
 
 * **Write 계층 (CP)**: RDBMS를 활용하여 데이터의 정합성과 ACID 트랜잭션을 보장합니다.
 * **Read 계층 (AP)**: 역색인(Inverted Index) 구조로 검색에 강한 **Elasticsearch**나, `JOIN` 연산 없이 문서를 빠르게 읽을 수 있는 **NoSQL(MongoDB 등)**을 활용합니다.
@@ -113,8 +87,6 @@ Kafka가 이미 데이터를 보관하고 전달하는데 Redis를 추가로 사
 이러한 요소들을 결합하면 다음과 같은 이벤트 기반 분산 시스템 아키텍처가 구성됩니다.
 
 ![](/assets/img/posts/스크린샷-2026-08-16-233902.png)
-
-
 
 - - -
 
