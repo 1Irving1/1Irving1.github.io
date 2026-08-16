@@ -112,30 +112,9 @@ Kafka가 이미 데이터를 보관하고 전달하는데 Redis를 추가로 사
 
 이러한 요소들을 결합하면 다음과 같은 이벤트 기반 분산 시스템 아키텍처가 구성됩니다.
 
-```mermaid
-flowchart TD
-    Client["Client (사용자)"]
+![](/assets/img/posts/스크린샷-2026-08-16-233902.png)
 
-    subgraph Write_Path ["1. Write Path (명령 처리)"]
-        Client -->|쓰기 요청| App_Write["애플리케이션 서버"]
-        App_Write -->|ACID 저장| RDBMS[("RDBMS (MySQL/PostgreSQL)<br/>[CP DB]")]
-    end
 
-    subgraph Streaming_Pipeline ["2. Streaming Pipeline (이벤트 전달)"]
-        RDBMS -->|이벤트 발행| Kafka{{"Kafka (Event Streaming Bus)"}}
-    end
-
-    subgraph Read_Path ["3. Read Path (조회 처리)"]
-        Kafka -->|비동기 동기화| Worker1["Read DB Sync Worker"]
-        Kafka -->|비동기 갱신| Worker2["Redis Cache Worker"]
-
-        Worker1 --> ReadDB[("Elasticsearch / NoSQL<br/>[AP Read DB]")]
-        Worker2 --> Redis[("Redis<br/>[1ms 캐시]")]
-
-        Client -->|초고속 조회| Redis
-        Client -->|검색/조건 조회| ReadDB
-    end
-```
 
 - - -
 
