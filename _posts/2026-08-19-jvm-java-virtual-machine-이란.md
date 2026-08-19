@@ -4,7 +4,7 @@ date: 2026-08-19T11:31:00.000+09:00
 categories:
   - Java
 tags: []
-image: /assets/img/posts/gemini_generated_image_oliyj1oliyj1oliy.png
+image: /assets/img/posts/gemini_generated_image_jgymqbjgymqbjgym.png
 ---
 ## JVM이 정확히 무엇인가? 그리고 어떤 역할을 하는가?
 
