@@ -33,7 +33,7 @@ image: /assets/img/posts/gemini_generated_image_jgymqbjgymqbjgym.png
 
 #### Runtime Data Area(메모리 관리 구조)
 
-![](/assets/img/posts/jvm_runtime_data_area_memory.svg)
+![](/assets/img/posts/diagram-2-jvm-memory-structure.png)
 
 JVM이 OS로부터 할당받아 애플리케이션을 실행하는 동안 사용하는 메모리 영역입니다.
 
